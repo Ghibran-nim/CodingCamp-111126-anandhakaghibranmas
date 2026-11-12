@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense & Budget Visualizer</title>
+    <!-- Menghubungkan CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Menggunakan Chart.js untuk Visualisasi -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Expense & Budget Visualizer</h2>
+            <!-- Optional Challenge: Dark/Light Mode -->
+            <button id="darkModeToggle">Toggle Dark Mode</button>
+        </header>
+
+        <section class="balance-section card">
+            <p>TOTAL BALANCE</p>
+            <h1 id="totalBalance">$0.00</h1>
+        </section>
+
+        <section class="form-section card">
+            <h3>Add Transaction</h3>
+            <form id="transactionForm">
+                <div class="form-control">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" id="itemName" placeholder="e.g. Cilok" required>
+                </div>
+                <div class="form-control">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="e.g. 14.94" step="0.01" required>
+                </div>
+                <div class="form-control">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <!-- Kategori default akan diisi via JS (Food, Transport, Fun) -->
+                    </select>
+                </div>
+                <!-- Optional Challenge: Custom Categories -->
+                <div class="form-control custom-cat-wrapper">
+                    <input type="text" id="customCategory" placeholder="New custom category...">
+                    <button type="button" id="addCategoryBtn" class="btn-secondary">Add Category</button>
+                </div>
+                <button type="submit" class="btn-primary">Add Transaction</button>
+            </form>
+        </section>
+
+        <div class="bottom-grid">
+            <section class="transactions-section card">
+                <div class="transactions-header">
+                    <h3>Transactions</h3>
+                    <!-- Optional Challenge: Sort Transactions -->
+                    <select id="sortSelect">
+                        <option value="default">Sort: Default</option>
+                        <option value="amountAsc">Amount (Low to High)</option>
+                        <option value="amountDesc">Amount (High to Low)</option>
+                        <option value="category">Category (A-Z)</option>
+                    </select>
+                </div>
+                <ul id="transactionList" class="transaction-list">
+                    <!-- Daftar transaksi akan masuk ke sini -->
+                </ul>
+            </section>
+
+            <section class="chart-section card">
+                <h3>Spending by Category</h3>
+                <div class="chart-container">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Menghubungkan JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

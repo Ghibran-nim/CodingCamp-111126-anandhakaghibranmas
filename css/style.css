@@ -1,0 +1,201 @@
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #777777;
+    --primary-blue: #3b82f6;
+    --danger-red: #ef4444;
+    --border-color: #e5e7eb;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: #2d3748;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#darkModeToggle {
+    background-color: var(--text-main);
+    color: var(--card-bg);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+}
+
+.balance-section {
+    text-align: center;
+}
+
+.balance-section p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.balance-section h1 {
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-top: 5px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-control input, .form-control select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-main);
+}
+
+.custom-cat-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#sortSelect {
+    padding: 5px;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.transaction-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-info h4 {
+    font-weight: 500;
+}
+
+.transaction-info p {
+    color: var(--primary-blue);
+    font-weight: bold;
+    margin: 3px 0;
+}
+
+.transaction-info small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.delete-btn {
+    background-color: var(--danger-red);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
